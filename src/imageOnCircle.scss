@@ -1,0 +1,162 @@
+  $circle-size: 30em;
+  $item-size: 6em;
+
+.circle-container {
+    > * {
+        display: block;
+        position: absolute;
+        width:  $item-size;
+        height: $item-size;
+        margin: -($item-size / 2);
+        top:50%;
+        left:50%;
+    }
+    .avatar_box{
+        animation-delay: 0.2s;
+        animation-duration: 1.5s; 
+        animation-fill-mode: forwards;
+        opacity: 0;  
+    }
+    .avatar_box:nth-child(1) {
+        animation-name: example1;
+    }
+    .avatar_box:nth-child(2) {
+        animation-name: example2;
+    }
+    .avatar_box:nth-child(3) {
+        animation-name: example3;
+    }
+    .avatar_box:nth-child(4) {
+        animation-name: example4;
+    }
+    .avatar_box:nth-child(5) {
+        animation-name: example5;
+    }
+
+}
+
+.inline-boxes{
+    display: inline-flex;
+    position: absolute;
+    bottom: 100px;
+    .avatar_box{
+        margin: 0px 20px;
+    }
+    .avatar_box {
+        position: relative;
+        span{
+            position: absolute;
+            top:110px;
+            color:#fff;
+            padding: 5px 20px;
+            border-radius:5px;
+        }
+    }
+}
+
+.avatar_box {
+    border: 3px solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    height:100px;
+    width:100px;
+    height: 100px;
+
+    img{
+        width: 100%;
+        margin: 5px;
+        height: 100%;
+        border-radius: 50%;
+    }
+    span{
+        position: absolute;
+        top:-25px;
+        color:#fff;
+        padding: 5px 20px;
+        border-radius:5px;
+    }
+}
+
+.animationClass {
+    animation-name: example;
+    animation-duration: 0.3s; 
+}
+
+
+@keyframes example {
+    0% {
+        opacity: 1;  
+        left:0
+    }
+    100% {
+        opacity: 0;
+        left:20%
+    }
+}
+
+@keyframes example1 {
+    0% {
+        left:10%;
+        top:100%;
+        opacity: 0;
+    }
+    100% {
+        left:50%;
+        top:50%;
+        opacity: 1; 
+    }
+}
+
+@keyframes example2 {
+    0% {
+        left:25%;
+        top:100%;
+        opacity: 0;  
+    }
+    100% {
+        left:50%;
+        top:50%; 
+        opacity: 1; 
+    }
+}
+
+@keyframes example3 {
+    0% {
+        left:20%;
+        top:90%;
+        opacity: 0;  
+    }
+    100% {
+        left:50%;
+        top:50%;
+        opacity: 1; 
+    }
+}
+
+@keyframes example4 {
+    0% {
+        left:15%;
+        top:100%;
+        opacity: 0;  
+    }
+    100% {
+        left:50%;
+        top:50%;
+        opacity: 1; 
+    }
+}
+@keyframes example5 {
+    0% {
+        left:10%;
+        top:90%;
+        opacity: 0;  
+    }
+    100% {
+        left:50%;
+        top:50%;
+        opacity: 1; 
+    }
+}
