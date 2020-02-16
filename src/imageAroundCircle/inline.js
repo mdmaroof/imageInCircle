@@ -14,16 +14,20 @@ class InlineCircle extends Component {
 
     render(){
         const totalCount = this.state.data.length;
-        const totalAngle = 360 / totalCount;
+        // const totalAngle = 360 / totalCount;
+        let totalAngle;
+        totalAngle = 360 / totalCount
 
         return(
             <>
                 {this.state.data.map((x,i)=> {
+                    let rotateAngle;
+                    rotateAngle = totalAngle > 72 ? totalAngle * (i+1) - 90 : totalAngle * (i+1);
                     return(
                     <div className="avatar_box" key={i} style={{
                         borderColor:x.color,
                         color:x.color,
-                        transform: !this.props.inline && `rotate(${ (totalAngle * (i+1)) }deg) translate(15em) rotate(-${ (totalAngle * (i+1))}deg)`,
+                        transform: !this.props.inline && `rotate(${rotateAngle}deg) translate(15em) rotate(-${rotateAngle}deg)`,
                         filter: `grayscale(${!x.connected && 100 }%)`,
                     }}>
                         <img src="https://www.bigstockphoto.com/images/homepage/module-6.jpg" alt={x.name}/>
