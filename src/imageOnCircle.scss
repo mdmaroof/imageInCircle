@@ -1,13 +1,8 @@
   $circle-size: 30em;
-  $item-size: 6em;
 
 .circle-container {
     > * {
-        display: block;
         position: absolute;
-        width:  $item-size;
-        height: $item-size;
-        margin: -($item-size / 2);
         top:50%;
         left:50%;
     }
@@ -32,17 +27,19 @@
     .avatar_box:nth-child(5) {
         animation-name: example5;
     }
-
+    .avatar_box:nth-child(n+5) {
+        animation-name: example5;
+    }
 }
 
 .inline-boxes{
     display: inline-flex;
+    // need to remove in final version
     position: absolute;
     bottom: 100px;
+       // need to remove in final version
     .avatar_box{
         margin: 0px 20px;
-    }
-    .avatar_box {
         position: relative;
         span{
             position: absolute;
@@ -61,10 +58,6 @@
     justify-content: center;
     align-items: center;
     color: #000;
-    height:100px;
-    width:100px;
-    height: 100px;
-
 
     img{
         width: 100%;

@@ -4,7 +4,14 @@ const data = [
     {id:2,name:'rumman',color:'#1BBC9C',connected:true},
     {id:3,name:'munner',color:'#6C63FF',connected:true},
     {id:4,name:'shamoon',color:'#FAAD14',connected:true},
-    {id:5,name:'shoeb',color:'#FF3B30',connected:false }
+    {id:5,name:'shoeb',color:'#FF3B30',connected:false },
+    // {id:6,name:'shoeb',color:'#FF3B30',connected:true },
+    // {id:5,name:'shoeb',color:'#FF3B30',connected:false },
+    // {id:6,name:'shoeb',color:'#FF3B30',connected:true },
+    // {id:5,name:'shoeb',color:'#FF3B30',connected:false },
+    // {id:6,name:'shoeb',color:'#FF3B30',connected:true },
+    // {id:5,name:'shoeb',color:'#FF3B30',connected:false },
+    // {id:6,name:'shoeb',color:'#FF3B30',connected:true }
 ]
 class InlineCircle extends Component {
 
@@ -29,6 +36,8 @@ class InlineCircle extends Component {
                         color:x.color,
                         transform: !this.props.inline && `rotate(${rotateAngle}deg) translate(15em) rotate(-${rotateAngle}deg)`,
                         filter: `grayscale(${!x.connected && 100 }%)`,
+                        width:this.props.size ? `${this.props.size}em` :  '6em',
+                        height:this.props.size ? `${this.props.size}em` :  '6em',
                     }}>
                         <img src="https://www.bigstockphoto.com/images/homepage/module-6.jpg" alt={x.name}/>
                         <span style={{        
@@ -40,7 +49,6 @@ class InlineCircle extends Component {
                     </div>
                     )
                 })}
-                {/* {!this.props.inline && <li style={{border:'1px #000 solid'}}>Timer</li>} */}
             </>
         )
     }
